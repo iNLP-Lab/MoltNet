@@ -97,7 +97,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 0 12px;
-  font-size: 2.25rem;
+  font-size: 2.4rem;
   font-weight: 700;
   margin: 0 0 16px;
   letter-spacing: -0.02em;
@@ -122,8 +122,13 @@ body {
 }
 
 .authors {
-  font-size: 1.1rem;
-  margin-bottom: 6px;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .authors a {
@@ -136,7 +141,7 @@ body {
 }
 
 .affiliations {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
   margin-bottom: 8px;
 }
@@ -151,13 +156,13 @@ body {
 }
 
 .contribution-note {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
   margin-bottom: 20px;
 }
 
 .released-date {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-muted);
   margin: 16px 0 0 !important;
 }
@@ -173,10 +178,10 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 18px;
+  padding: 11px 20px;
   border-radius: 6px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-decoration: none;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
   border: 1px solid var(--border);
@@ -353,17 +358,30 @@ body {
   }
 }
 
-.key-findings-layout {
+/* Key Findings: left = Intent + Incentive, right = Norm + Emotion */
+.key-findings-two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 24px 32px;
   align-items: start;
   margin-bottom: 24px;
 }
 
-.key-findings-layout .findings-list {
-  margin: 0;
-  max-width: none;
+.finding-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.finding-item {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.key-findings-above {
+  margin: 0 0 20px;
+  text-align: center;
 }
 
 .key-findings-figure {
@@ -373,9 +391,11 @@ body {
 
 .key-findings-img {
   width: 100%;
-  max-width: 100%;
+  max-width: 75%;
   height: auto;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid var(--border);
   border-radius: 8px;
 }
@@ -387,16 +407,8 @@ body {
 }
 
 @media (max-width: 720px) {
-  .key-findings-layout {
+  .key-findings-two-col {
     grid-template-columns: 1fr;
-  }
-
-  .key-findings-layout .findings-list {
-    order: 1;
-  }
-
-  .key-findings-figure {
-    order: 2;
   }
 }
 
@@ -420,7 +432,6 @@ body {
 /* Abstract */
 .abstract p {
   font-size: 1.05rem;
-  max-width: 72ch;
 }
 
 .small-caps {
