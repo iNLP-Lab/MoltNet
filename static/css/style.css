@@ -122,13 +122,9 @@ body {
 }
 
 .authors {
-  font-size: 1.25rem;
+  font-size: clamp(0.8rem, 1.4vw + 0.65rem, 1.25rem);
   margin-bottom: 8px;
   white-space: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding-bottom: 4px;
-  -webkit-overflow-scrolling: touch;
 }
 
 .authors a {
