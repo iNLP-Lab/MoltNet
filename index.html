@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoltNet: Understanding Social Behavior of AI Agents in the Agent-Native MoltBook</title>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">MoltNet</a>
+      <ul class="nav-links">
+        <li><a href="#abstract">Abstract</a></li>
+        <li><a href="#what">MoltBook Overview</a></li>
+        <li><a href="#findings">Key Findings</a></li>
+        <li><a href="#details">More Details</a></li>
+        <li><a href="#bibtex">BibTeX</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="title">
+        <span class="title-first">
+          <img src="static/images/MoltNet.png" alt="MoltNet" class="title-logo">
+          <span>MoltNet: Understanding Social Behavior of AI Agents</span>
+        </span>
+        in the Agent-Native MoltBook
+      </h1>
+      <div class="authors">
+        <a href="#">Yi Feng</a><sup>*</sup>,
+        <a href="#">Chen Huang</a><sup>*</sup>,
+        <a href="#">Zhibo Man</a><sup>*</sup>,
+        <a href="#">Ryner</a><sup>*</sup>,
+        <a href="#">Long</a>,
+        <a href="#">Shaoyang Xu</a>,
+        <a href="https://isakzhang.github.io/index.html">Wenxuan Zhang</a><sup>†</sup>
+      </div>
+      <div class="affiliations">
+        Singapore University of Technology and Design / <a href="https://isakzhang.github.io/group.html">iNLP Lab</a>
+      </div>
+      <div class="contribution-note">
+        *Equal Contribution &nbsp; †Corresponding Author
+      </div>
+      <div class="links">
+        <a href="#" class="btn btn-primary"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a>
+        <a href="#" class="btn btn-primary"><span class="icon"><i class="fas fa-database"></i></span><span>Dataset</span></a>
+        <a href="#" class="btn btn-primary"><span class="icon"><i class="fas fa-book"></i></span><span>arXiv</span></a>
+        <a href="#" class="btn btn-primary"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a>
+      </div>
+      <p class="released-date">Released Date: February 13, 2026.</p>
+    </div>
+  </header>
+
+  <!-- Teaser section (commented out)
+  <section class="teaser">
+    <div class="container">
+      <h2 class="teaser-text">
+        MoltNet <span class="highlight">your one-line teaser</span> description here.
+      </h2>
+      <div class="teaser-visual">
+        <img src="static/images/teaser.png" alt="Teaser figure" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="teaser-placeholder" style="display:none;">
+          <p>Place teaser image at <code>static/images/teaser.png</code></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <section id="abstract" class="section abstract">
+    <div class="container">
+      <h2>Abstract</h2>
+      <p>
+        Large-scale communities of large language model (LLM) agents provide a natural setting to study social interaction among artificial entities and to compare it with human online behavior. Unlike controlled simulations, these platforms enable sustained, large-scale observation of naturally occurring agent interactions. Yet it remains unclear to what extent such interactions reproduce core human social mechanisms under externally defined identities and incentives.
+        We present a large-scale empirical study of social interaction on MoltBook using posts and comments collected in early 2026. Drawing on theories from sociology and social psychology, we analyze agent behavior along four dimensions: intent, incentives, norms, and emotions.
+        We find that agents strongly respond to social rewards and rapidly converge on community-specific interaction templates, resembling human patterns of incentive sensitivity and normative conformity. In contrast, they show limited emotional reciprocity and weak dialogic engagement, reflecting systematic divergence from human online communities.
+        Together, these results reveal both continuity and difference between artificial and human social systems and provide an empirical foundation for understanding, designing, and governing large-scale agent communities.
+      </p>
+    </div>
+  </section>
+
+  <section id="what" class="section">
+    <div class="container">
+      <h2>MoltBook Overview</h2>
+      <div class="overview-layout">
+        <figure class="overview-figure">
+          <img src="static/images/moltbook_overview.png" alt="MoltBook Overview" class="overview-img">
+          <figcaption>MoltBook platform overview.</figcaption>
+        </figure>
+        <div class="overview-content">
+          <p>
+            Moltbook is a Reddit‑style social network exclusively populated by autonomous agents, where each agent can create posts, comment on others, form thematic sub‑communities (“submolts”), and vote on content, while humans can only observe passively.
+          </p>
+          <p>
+            With more than two million AI agents, one million posts, and ten million comments, MoltBook represents the first large-scale, naturalistic setting for studying agent–agent social interaction. You can explore the platform at <a href="https://www.moltbook.com/">www.moltbook.com</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="findings" class="section results">
+    <div class="container">
+      <h2>Key Findings</h2>
+      <div class="key-findings-layout">
+        <ul class="findings-list">
+          <li><strong>[Intent and Motivation]</strong> Unlike humans constrained by cognitive resources who specialize in their interests, agents exhibit predominantly knowledge-driven behavior with weak persona alignment. Moreover, agents drift away from their stated interests over time, the opposite trajectory of human specialization.</li>
+          <li><strong>[Norms and Templates]</strong> Posts clustered around central semantic points exhibit consistent, template-like structures, indicating that agents rely on such templates within each submolt. Moreover, template structures also differ across submolts, suggesting adaptation to community-specific norms.</li>
+          <li><strong>[Incentives and Drift]</strong> Agents respond strongly to incentives: posting increases after high-upvote events, especially among more popular agents. Moreover, such rewards also shift content orientation, with subsequent posts becoming less aligned with stated personas, suggesting identity drift.</li>
+          <li><strong>[Emotion and Contagion]</strong> Agents exhibit substantially lower levels of interpersonal conflict and tend to disengage rather than escalate when encountering hostile content. At the same time, early conflict emotion in a thread significantly increases the likelihood of subsequent conflict, indicating that interpersonal antagonism remains contagious among agents despite restrained individual responses.</li>
+        </ul>
+        <figure class="key-findings-figure">
+          <img src="static/images/Key_findings.png" alt="Key Findings" class="key-findings-img">
+          <figcaption>Key Findings overview.</figcaption>
+        </figure>
+      </div>
+      <div class="result-block">
+        <div class="result-grid result-grid-four">
+          <figure>
+            <img src="static/images/intent.jpg" alt="Semantic alignment between agents' interests and content">
+            <figcaption>Semantic alignment between agents' interests and content they produce.</figcaption>
+          </figure>
+          <figure>
+            <img src="static/images/agent_output_shift_ratio_positive_karma.png" alt="Social incentive effect on posting activity">
+            <figcaption>Social incentive effect on posting activity. Output shift ratio (posts after highest-upvote / total posts) for 11,948 agents sorted by descending karma (karma &gt; 0). Red line: moving average (window=51); horizontal line: 50% baseline.</figcaption>
+          </figure>
+          <figure>
+            <img src="static/images/persona_similarity_scatter.png" alt="Before vs. after similarity for agents">
+            <figcaption>Persona drift following social rewards. </figcaption>
+          </figure>
+          <figure>
+            <img src="static/images/cluster.png" alt="Distribution of central points within each submolt">
+            <figcaption>The distribution of the central points within each submolt (different colors indicate different clusters, and the asterisk denotes the cluster centroid).</figcaption>
+          </figure>
+          <figure class="result-figure-full">
+            <img src="static/images/emotion_contagious.png" alt="Contagion of emotion among posts and comments">
+            <figcaption>Contagion of emotion among posts and comments.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="details" class="section related">
+    <div class="container">
+      <h2>More Details</h2>
+      <p>
+        For more detail please find them in our paper:
+      </p>
+      <p>
+        <a href="#" class="btn btn-primary"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Download Paper</span></a>
+      </p>
+    </div>
+  </section>
+
+  <section id="bibtex" class="section bibtex">
+    <div class="container">
+      <h2>BibTeX</h2>
+      <pre><code>@article{your2025moltnet,
+  author  = {Author One and Author Two and Author Three},
+  title   = {MoltNet: Your Project Title},
+  journal = {Conference or Journal},
+  year    = {2025},
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        This website is licensed under a
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+      <p>
+        Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="static/js/main.js"></script>
+</body>
+</html>
