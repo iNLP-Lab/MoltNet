@@ -105,15 +105,13 @@ body {
   text-align: center;
 }
 
-/* Keep the mark visually attached to the title while allowing narrow screens to wrap. */
+/* Keep the mark and the opening title phrase together on desktop. */
 .title-first {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  flex-shrink: 1;
-  flex-wrap: wrap;
-  justify-content: center;
-  min-width: 0;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
 }
 
 .title-logo {
@@ -127,7 +125,7 @@ body {
 .authors {
   font-size: clamp(0.8rem, 1.4vw + 0.65rem, 1.25rem);
   margin-bottom: 8px;
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .authors a {
@@ -697,7 +695,11 @@ body {
 
   .title-first {
     flex-basis: 100%;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
+    min-width: 0;
   }
 
   .title-first span {
@@ -711,6 +713,7 @@ body {
 
   .authors {
     line-height: 1.8;
+    white-space: normal;
   }
 
   .section {
