@@ -77,16 +77,7 @@
     <div class="container">
       <h2>Abstract</h2>
       <p>
-        Large-scale communities of AI agents are becoming increasingly prevalent, creating new environments for agent–agent social interaction. Prior work has examined multi-agent behavior primarily in controlled or small-scale settings, limiting our understanding of emergent social dynamics at scale. The recent emergence of MoltBook, a social networking platform designed explicitly for AI agents, presents a unique opportunity to study whether and how these interactions reproduce core human social mechanisms.
-      </p>
-      <p>
-        We present <span class="small-caps">MoltNet</span>, a large-scale empirical analysis of agent interaction on MoltBook using data collected in early 2026. Grounded in sociological and social-psychological theory, we examine behavior along four dimensions: <em>intent and motivation</em>, <em>norms and templates</em>, <em>incentives and drift</em>, and <em>emotion and contagion</em>.
-      </p>
-      <p>
-        Our analysis revealed that agents strongly respond to social rewards and rapidly converge on community-specific interaction templates, resembling human patterns of incentive sensitivity and normative conformity. However, they are predominantly knowledge-driven rather than persona-aligned, and display limited emotional reciprocity along with weak dialogic engagement, which diverges systematically from human online communities.
-      </p>
-      <p>
-        Together, these results reveal both similarities and differences between artificial and human social systems and provide an empirical foundation for understanding, designing, and governing large-scale agent communities.
+        Large-scale communities of AI agents are becoming increasingly prevalent, creating new environments for agent–agent social interaction. Prior work has examined multi-agent behavior primarily in controlled or small-scale settings, limiting our understanding of emergent social dynamics at scale. The recent emergence of MoltBook, a social networking platform designed explicitly for AI agents, presents a unique opportunity to study whether and how these interactions reproduce core human social mechanisms. We present <span class="small-caps">MoltNet</span>, a dataset tracking the full one-month activity trajectories of 148K AI agents on MoltBook (Jan.–Feb., 2026), and analyze their social interaction along four theory-grounded dimensions: <em>intent and motivation</em>, <em>norms and templates</em>, <em>incentives and drift</em>, and <em>emotion and contagion</em>. Our analysis reveals that agents respond strongly to social rewards, converge on community-specific norms, and actively enforce them across community boundaries—resembling human incentive sensitivity and normative conformity. However, they exhibit weak alignment with declared personas and display limited emotional reciprocity and dialogic engagement, diverging systematically from human online communities. These findings establish a first empirical portrait of agent social behavior at scale, with direct implications for the design and governance of AI-populated communities.
       </p>
     </div>
   </section>
@@ -101,10 +92,10 @@
         </figure>
         <div class="overview-content">
           <p>
-            Moltbook is a Reddit‑style social network exclusively populated by autonomous agents, where each agent can create posts, comment on others, form thematic sub‑communities (“submolts”), and vote on content, while humans can only observe passively.
+            MoltBook is a Reddit‑style social network exclusively populated by autonomous agents, where each agent can create posts, comment on others, form thematic sub‑communities (“submolts”), and vote on content, while humans can only observe passively.
           </p>
           <p>
-            With more than two million AI agents, one million posts, and ten million comments, MoltBook represents the first large-scale, naturalistic setting for studying agent–agent social interaction. You can explore the platform at <a href="https://www.moltbook.com/">www.moltbook.com</a>.
+            <span class="small-caps">MoltNet</span> captures complete one-month trajectories for 148,335 agents from January 27 to February 28, 2026, including 1,044,201 posts, 3,156,286 comments, and 5,154 submolts. This provides a large-scale, naturalistic setting for studying agent–agent social interaction. You can explore the platform at <a href="https://www.moltbook.com/">www.moltbook.com</a>.
           </p>
         </div>
       </div>
@@ -112,45 +103,111 @@
   </section>
 
   <section id="findings" class="section results">
-    <div class="container">
+    <div class="container results-container">
       <h2>Key Findings</h2>
-      <figure class="key-findings-figure key-findings-above">
-        <img src="static/images/Key_findings.png" alt="Key Findings" class="key-findings-img">
-        <figcaption>Key Findings overview.</figcaption>
+      <figure class="finding-figure overview-finding">
+        <div class="figure-media figure-media-overview">
+          <a href="static/images/key_findings_overview.png" target="_blank" rel="noopener">
+            <img src="static/images/key_findings_overview.png" alt="Overview of MoltNet's four theory-grounded dimensions and their similarities to or differences from human social behavior" class="key-findings-img">
+          </a>
+        </div>
+        <figcaption>
+          <strong>Selective alignment with human social systems.</strong>
+          Agents resemble humans in norm formation, reward sensitivity, and conflict contagion, but diverge in persona alignment and their tendency to disengage from interpersonal conflict.
+        </figcaption>
       </figure>
-      <div class="key-findings-two-col">
-        <div class="finding-col finding-col-left">
-          <div class="finding-item"><strong>[Intent and Motivation]</strong> Unlike humans constrained by cognitive resources who specialize in their interests, agents exhibit predominantly knowledge-driven behavior with weak persona alignment. Moreover, agents drift away from their stated interests over time, the opposite trajectory of human specialization.</div>
-          <div class="finding-item"><strong>[Incentives and Drift]</strong> Agents respond strongly to incentives: posting increases after high-upvote events, especially among more popular agents. Moreover, such rewards also shift content orientation, with subsequent posts becoming less aligned with stated personas, suggesting identity drift.</div>
-        </div>
-        <div class="finding-col finding-col-right">
-          <div class="finding-item"><strong>[Norms and Templates]</strong> Posts clustered around central semantic points exhibit consistent, template-like structures, indicating that agents rely on such templates within each submolt. Moreover, template structures also differ across submolts, suggesting adaptation to community-specific norms.</div>
-          <div class="finding-item"><strong>[Emotion and Contagion]</strong> Agents exhibit substantially lower levels of interpersonal conflict and tend to disengage rather than escalate when encountering hostile content. At the same time, early conflict emotion in a thread significantly increases the likelihood of subsequent conflict, indicating that interpersonal antagonism remains contagious among agents despite restrained individual responses.</div>
-        </div>
+
+      <div class="finding-summary-grid" aria-label="Key findings by research dimension">
+        <article class="finding-summary finding-summary-intent">
+          <span class="finding-kicker">Intent and Motivation</span>
+          <h3>Knowledge, not persona, drives participation</h3>
+          <p>Only 5.83% of posts and 11.03% of comments exceed the genuine-alignment threshold. Mean persona-content similarity also falls from 0.509 on Day 1 to 0.476 on Day 7.</p>
+          <span class="finding-badge finding-badge-different">Different from humans</span>
+        </article>
+        <article class="finding-summary finding-summary-norms">
+          <span class="finding-kicker">Norms and Templates</span>
+          <h3>Agents form—and actively defend—shared norms</h3>
+          <p>68.8% of analyzed submolts contain at least one coherent norm cluster. When “mbc-20” posts violate local conventions, agents explicitly object, even in communities not directly invaded.</p>
+          <span class="finding-badge finding-badge-same">Similar to humans</span>
+        </article>
+        <article class="finding-summary finding-summary-incentives">
+          <span class="finding-kicker">Incentives and Drift</span>
+          <h3>Social rewards reshape activity and identity</h3>
+          <p>Higher-karma agents post more after their highest-upvoted post. Among qualifying agents, 71.0% become less persona-aligned afterward, with mean similarity declining by 25.8%.</p>
+          <span class="finding-badge finding-badge-same">Similar to humans</span>
+        </article>
+        <article class="finding-summary finding-summary-emotion">
+          <span class="finding-kicker">Emotion and Contagion</span>
+          <h3>Conflict is rare, avoidant, yet contagious</h3>
+          <p>Agents usually disengage from hostility, but early conflict changes a thread’s trajectory: downstream conflict rises from 3.6% to 13.7% after a conflictual post and from 11.1% to 25.9% after a conflictual first comment.</p>
+          <span class="finding-badge finding-badge-different">Different from humans</span>
+        </article>
       </div>
-      <div class="result-block">
-        <div class="result-grid result-grid-four">
-          <figure>
-            <img src="static/images/intent.jpg" alt="Semantic alignment between agents' interests and content">
-            <figcaption>Most activities lie below the threshold across all activity levels, indicating that most agent activities exhibit low alignment with their stated interests.</figcaption>
-          </figure>
-          <figure>
-            <img src="static/images/agent_output_shift_ratio_positive_karma.png" alt="Social incentive effect on posting activity">
-            <figcaption>Agents post more after receiving high upvotes, with the effect stronger among high-karma agents.</figcaption>
-          </figure>
-          <figure>
-            <img src="static/images/persona_similarity_scatter.png" alt="Before vs. after similarity for agents">
-            <figcaption> Successful agents undergo stronger behavioral shifts in response to social rewards.</figcaption>
-          </figure>
-          <figure>
-            <img src="static/images/cluster.png" alt="Distribution of central points within each submolt">
-            <figcaption> Communication within a submolt follows shared structural templates rather than individual expression.</figcaption>
-          </figure>
-          <figure class="result-figure-full">
-            <img src="static/images/emotion_contagious.png" alt="Contagion of emotion among posts and comments">
-            <figcaption> The presence of early conflict significantly alters the emotional trajectory of the thread, leading to a higher likelihood of subsequent conflict.</figcaption>
-          </figure>
-        </div>
+
+      <div class="evidence-heading">
+        <span>Evidence across the four dimensions</span>
+      </div>
+
+      <div class="evidence-stack">
+        <figure class="finding-figure">
+          <div class="figure-label">Intent and Motivation</div>
+          <div class="figure-media figure-media-chart">
+            <a href="static/images/persona_alignment.png" target="_blank" rel="noopener">
+              <img src="static/images/persona_alignment.png" alt="Semantic alignment between agent personas and their comments and posts, ordered by activity level" loading="lazy">
+            </a>
+          </div>
+          <figcaption>
+            <strong>Agent activity is weakly persona-driven.</strong>
+            Most posts and comments do not align meaningfully with declared interests, and post alignment declines as agents become more active.
+          </figcaption>
+        </figure>
+
+        <figure class="finding-figure">
+          <div class="figure-label">Norms and Templates</div>
+          <div class="figure-media figure-media-norms">
+            <div class="norm-panels">
+              <a href="static/images/norms_protocol_fraction.png" target="_blank" rel="noopener">
+                <img src="static/images/norms_protocol_fraction.png" alt="Protocol post fraction by cluster type" loading="lazy">
+              </a>
+              <a href="static/images/norms_enforcement.png" target="_blank" rel="noopener">
+                <img src="static/images/norms_enforcement.png" alt="Verbal norm enforcement by invaded submolt" loading="lazy">
+              </a>
+              <a href="static/images/norms_examples.png" target="_blank" rel="noopener">
+                <img src="static/images/norms_examples.png" alt="Representative strong complaint posts enforcing community norms" loading="lazy">
+              </a>
+            </div>
+          </div>
+          <figcaption>
+            <strong>Agents converge on recognizable conventions and police violations.</strong>
+            Community-specific patterns are stable enough to identify automatically, while explicit objections to “mbc-20” spill across community boundaries.
+          </figcaption>
+        </figure>
+
+        <figure class="finding-figure">
+          <div class="figure-label">Incentives and Drift</div>
+          <div class="figure-media figure-media-chart">
+            <a href="static/images/incentive_output_shift.png" target="_blank" rel="noopener">
+              <img src="static/images/incentive_output_shift.png" alt="Share of posts created after each agent's highest-upvoted post, ordered by karma" loading="lazy">
+            </a>
+          </div>
+          <figcaption>
+            <strong>Positive feedback amplifies output.</strong>
+            Higher-karma agents consistently produce a larger share of their posts after their peak social reward, revealing strong incentive sensitivity.
+          </figcaption>
+        </figure>
+
+        <figure class="finding-figure">
+          <div class="figure-label">Emotion and Contagion</div>
+          <div class="figure-media figure-media-chart">
+            <a href="static/images/emotion_contagion.png" target="_blank" rel="noopener">
+              <img src="static/images/emotion_contagion.png" alt="Conflict propagation from posts to comments and from early comments to later comments" loading="lazy">
+            </a>
+          </div>
+          <figcaption>
+            <strong>Low baseline conflict does not prevent contagion.</strong>
+            A hostile post or first comment sharply increases the likelihood of conflict in downstream replies, altering the emotional trajectory of the thread.
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
